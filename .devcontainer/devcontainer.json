@@ -1,0 +1,21 @@
+{
+    "name": "Rust Dev Container",
+    "image": "rust:latest",  // Official Rust Docker image
+    "features": {
+        "ghcr.io/devcontainers/features/rust:1": {} // Adds Rust tools and features
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "rust-lang.rust-analyzer",   // Rust language support
+                "serayuzgur.crates",         // Cargo.toml support
+                "vadimcn.vscode-lldb"        // Debugger support
+            ]
+        }
+    },
+    "settings": {
+        "rust-analyzer.checkOnSave.command": "clippy" // Lint on save using Clippy
+    },
+    "postCreateCommand": "rustup update && cargo install cargo-edit", // Updates Rust and installs useful tool
+    "mounts": [ "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached" ]
+}
