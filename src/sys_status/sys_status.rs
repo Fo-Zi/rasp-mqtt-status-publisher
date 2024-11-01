@@ -1,6 +1,6 @@
 pub struct MemUsage{
-    mem_total: u32,
-    mem_free: u32,
+    pub mem_total: u32,
+    pub mem_free: u32,
 }
 
 pub trait SysStatus {

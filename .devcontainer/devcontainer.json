@@ -7,7 +7,7 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "rust-lang.rust-analyzer",   // Rust language support
+                    "rust-lang.rust-analyzer",   // Rust language support
                 "serayuzgur.crates",         // Cargo.toml support
                 "vadimcn.vscode-lldb"        // Debugger support
             ]
@@ -16,6 +16,5 @@
     "settings": {
         "rust-analyzer.checkOnSave.command": "clippy" // Lint on save using Clippy
     },
-    "postCreateCommand": "rustup update && cargo install cargo-edit", // Updates Rust and installs useful tool
     "mounts": [ "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached" ]
 }
